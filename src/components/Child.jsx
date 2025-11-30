@@ -9,14 +9,13 @@ const Child = ({ todos, handleComplete }) => {
         todos.map((todo) => (
           <ul key={todo.id}>
             <li>
-              <div style={{ display: "flex" }}>
-                <p>{todo.text}</p>
-                {!todo.isCompleted ? (
-                  <button onClick={() => handleComplete(todo.id)}>
-                    Complete
-                  </button>
-                ) : null}
-              </div>
+              <p>{todo.text}</p>
+
+              {!todo.isCompleted && (
+                <button onClick={() => handleComplete(todo.id)}>
+                  Complete
+                </button>
+              )}
             </li>
           </ul>
         ))}
